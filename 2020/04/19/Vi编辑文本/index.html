@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="MySQL," />
+  <meta name="keywords" content="Linux," />
 
 
 
@@ -79,16 +79,16 @@
 
 
 
-<meta name="description" content="DQL（查询表中的数据） 语法：SELECT 字段列表FROM 表名WHERE 条件GROUP BY 分组字段HAVING 分组之后的条件ORDER BY 排序LIMIT 分页限定">
+<meta name="description" content="Vi编辑器Vi编辑器总共有三种模式：命令行模式，文本输入模式，末行模式进入vi的命令vi filename 打开或新建文件，并将光标置于第一行首vi +n filename 打开文件，并将光标置于第n行首vi + filename 打开文件，并将光标置于最后一行首vi +&#x2F;pattern filename打开文件，并将光标置于第一个与pattern匹配的串处vi -r filename 在上次正用">
 <meta property="og:type" content="article">
-<meta property="og:title" content="数据库中的查询操作">
-<meta property="og:url" content="http://yoursite.com/2020/03/18/%E6%95%B0%E6%8D%AE%E5%BA%93%E4%B8%AD%E7%9A%84%E6%9F%A5%E8%AF%A2%E6%93%8D%E4%BD%9C/index.html">
+<meta property="og:title" content="Linux常用命令">
+<meta property="og:url" content="http://yoursite.com/2020/04/19/Vi%E7%BC%96%E8%BE%91%E6%96%87%E6%9C%AC/index.html">
 <meta property="og:site_name" content="半价ing">
-<meta property="og:description" content="DQL（查询表中的数据） 语法：SELECT 字段列表FROM 表名WHERE 条件GROUP BY 分组字段HAVING 分组之后的条件ORDER BY 排序LIMIT 分页限定">
-<meta property="article:published_time" content="2020-03-18T12:54:18.146Z">
-<meta property="article:modified_time" content="2020-03-18T12:57:25.410Z">
+<meta property="og:description" content="Vi编辑器Vi编辑器总共有三种模式：命令行模式，文本输入模式，末行模式进入vi的命令vi filename 打开或新建文件，并将光标置于第一行首vi +n filename 打开文件，并将光标置于第n行首vi + filename 打开文件，并将光标置于最后一行首vi +&#x2F;pattern filename打开文件，并将光标置于第一个与pattern匹配的串处vi -r filename 在上次正用">
+<meta property="article:published_time" content="2020-04-19T10:39:12.200Z">
+<meta property="article:modified_time" content="2020-04-19T10:39:43.752Z">
 <meta property="article:author" content="weikang">
-<meta property="article:tag" content="MySQL">
+<meta property="article:tag" content="Linux">
 <meta name="twitter:card" content="summary">
 
 
@@ -119,13 +119,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2020/03/18/数据库中的查询操作/"/>
+  <link rel="canonical" href="http://yoursite.com/2020/04/19/Vi编辑文本/"/>
 
 
 
 
 
-  <title>数据库中的查询操作 | 半价ing</title>
+  <title>Linux常用命令 | 半价ing</title>
   
 
 
@@ -261,7 +261,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/18/%E6%95%B0%E6%8D%AE%E5%BA%93%E4%B8%AD%E7%9A%84%E6%9F%A5%E8%AF%A2%E6%93%8D%E4%BD%9C/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/04/19/Vi%E7%BC%96%E8%BE%91%E6%96%87%E6%9C%AC/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="weikang">
@@ -278,7 +278,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">数据库中的查询操作</h1>
+          <h1 class="post-title" itemprop="name headline">Linux常用命令</h1>
         
 
         <div class="post-meta">
@@ -290,8 +290,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-03-18T20:54:18+08:00">
-                2020-03-18
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-04-19T18:39:12+08:00">
+                2020-04-19
               </time>
             
 
@@ -344,7 +344,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  386
+                  759
                 </span>
               
 
@@ -360,7 +360,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  1
+                  2
                 </span>
               
             </div>
@@ -381,29 +381,10 @@
       
 
       
-        <h2 id="DQL（查询表中的数据）"><a href="#DQL（查询表中的数据）" class="headerlink" title="DQL（查询表中的数据）"></a>DQL（查询表中的数据）</h2><blockquote>
-<p>语法：<br>SELECT 字段列表<br>FROM 表名<br>WHERE 条件<br>GROUP BY 分组字段<br>HAVING 分组之后的条件<br>ORDER BY 排序<br>LIMIT 分页限定</p>
-</blockquote>
-<a id="more"></a>
-<ol>
-<li>基础查询<blockquote>
-<p>查询所有：<br>SELECT * FORM 表名;<br>多个字段的查询：<br>SELECT 字段1，字段2，…，字段n FROM 表名;<br>去除重复：<br>SELECT DISTINCT 字段列表 FROM 表名;<br>计算列：<br>一般可以使用一些四则运算来计算一些列的值（一般进行数值型运算）<br>IFNULL(表达式1，表达式2)<br>表达式1：那个字段判断是否为NULL<br>表达式2：如果该字段为NULL后的替换值</p>
-<pre><code>起别名：</code></pre><p>as(也可以省略)</p>
-</blockquote>
-</li>
-<li>条件查询：<blockquote>
-<p>WHERE子句后跟条件<br>运算符： &gt;、&lt;、&lt;=、&gt;=、=、&lt;&gt;<br>BETWEEN…AND…<br>IN（集合）<br>LIKE(占位符)：_：单个任意字符，%：多个任意字符<br>IS NULL，AND或&amp;&amp;，OR或||，NOT或！|</p>
-</blockquote>
-</li>
-<li>排序查询<blockquote>
-<p>ORDER BY 子句<br>ORDER BY 排序字段 排序方式<br>默认升序：<br>ASC:升序<br>DESC:降序</p>
-</blockquote>
-</li>
-</ol>
-<p>4.聚合函数</p>
-<blockquote>
-<p>将一列数据作为一个整体，进行纵向的运算<br>count：计算个数<br>max：计算最大值<br>min：计算最小值<br>sum：计算和<br>avg：计算平均数<br>聚合函数的运算，排除NULL值<br>SELECT COUNT(NAME) FROM STUDENT;<br>5. 分组查询<br>GROUP BY 字段;<br>分组之后查询的字段：分组字段，聚合函数<br>6. 分页查询<br>LIMIT 开始的索引，每页查询的条数；<br>公式：开始的索引 = （当前的页码 - 1）* 每页显示的条数<br>分页操作是一个方言</p>
-</blockquote>
+        <h2 id="Vi编辑器"><a href="#Vi编辑器" class="headerlink" title="Vi编辑器"></a>Vi编辑器</h2><p>Vi编辑器总共有三种模式：命令行模式，文本输入模式，末行模式<br>进入vi的命令<br><code>vi filename</code> 打开或新建文件，并将光标置于第一行首<br><code>vi +n filename</code> 打开文件，并将光标置于第n行首<br><code>vi + filename</code> 打开文件，并将光标置于最后一行首<br><code>vi +/pattern filename</code>打开文件，并将光标置于第一个与pattern匹配的串处<br><code>vi -r filename</code> 在上次正用vi编辑时发生系统崩溃，恢复filename<br><code>vi filename….filename</code> 打开多个文件，依次进行编辑</p>
+<h3 id="命令行模式"><a href="#命令行模式" class="headerlink" title="命令行模式"></a>命令行模式</h3><p>屏幕翻滚类命令<br><code>Ctrl+u</code>向文件首翻半屏<br><code>Ctrl+d</code>向文件尾翻半屏<br><code>Ctrl+f</code>向文件尾翻一屏<br><code>Ctrl＋b</code>向文件首翻一屏<br><code>nz</code>将第n行滚至屏幕顶部，不指定n时将当前行滚至屏幕顶部<br>Vi编辑器的默认模式，可以在此模式下键入命令来进入其他的模式，其他模式下按<code>ESC</code>键就可以回到命令行模式<br>命令行插入命令：<br><code>i</code> 在光标前插入<br><code>I</code> 在当前行首<br><code>a</code> 在光标后<br><code>A</code> 在当前行尾<br><code>o</code> 在当前行下新开一行<br><code>O</code> 在当前行上新开一行<br><code>r</code> 替换当前字符<br><code>R</code> 替换当前及以后字符，直到按ESC为止<br>删除命令<br><code>ndw或ndW</code>删除光标处开始及其后的n-1个字<br><code>do</code>删至行首<br><code>d$</code>删至行尾<br><code>ndd</code>删除当前行及其后n-1行<br><code>x或X</code>删除一个字符，x删除光标后的，而X删除光标前的<br><code>Ctrl+u</code>删除输入方式下所输入的文本<br>搜索及替换命令<br><code>/pattern</code>从光标开始处向文件尾搜索pattern<br><code>?pattern</code>从光标开始处向文件首搜索pattern<br><code>n</code>在同一方向重复上一次搜索命令<br><code>N</code>在反方向上重复上一次搜索命令<br><code>：s/p1/p2/g</code>将当前行中所有p1均用p2替代<br><code>：n1,n2s/p1/p2/g</code>将第n1至n2行中所有p1均用p2替代<br><code>：g/p1/s//p2/g</code>将文件中所有p1均用p2替换<br>选项设置<br><code>all</code>列出所有选项设置情况<br><code>term</code>设置终端类型<br><code>ignorance</code>在搜索中忽略大小写<br><code>list</code>：显示制表位(Ctrl+I)和行尾标志（$)<br><code>number</code>显示行号<br><code>report</code>显示由面向行的命令修改过的数目<br><code>terse</code>显示简短的警告信息<br><code>warn</code>在转到别的文件时若没保存当前文件则显示NO write信息<br><code>nomagic</code>允许在搜索模式中，使用前面不带“\”的特殊字符<br><code>nowrapscan</code>禁止vi在搜索到达文件两端时，又从另一端开始<br><code>mesg</code>允许vi显示其他用户用write写到自己终端上的信息</p>
+<h3 id="文本输入模式"><a href="#文本输入模式" class="headerlink" title="文本输入模式"></a>文本输入模式</h3><p>此模式下可以编辑本文内容</p>
+<h3 id="末行模式"><a href="#末行模式" class="headerlink" title="末行模式"></a>末行模式</h3><p>在命令行模式下按<code>：</code>进入末行模式，输入命令时会在最后一行显示，输入完命令后会自动进入命令行模式<br><code>：w</code> 保存当前文件<br><code>:q</code> 退出vi<br><code>：q!</code> 退出vi但不保存文件<br><code>：x</code> 保存当前文件并退出</p>
 
       
     </div>
@@ -431,7 +412,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/MySQL/" rel="tag"># MySQL</a>
+            <a href="/tags/Linux/" rel="tag"># Linux</a>
           
         </div>
       
@@ -444,18 +425,14 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2020/03/18/DDL%E5%92%8CDML/" rel="next" title="DDL和DML">
-                <i class="fa fa-chevron-left"></i> DDL和DML
+              <a href="/2020/04/19/Linux%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/" rel="next" title="Linux常用命令">
+                <i class="fa fa-chevron-left"></i> Linux常用命令
               </a>
             
           </div>
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2020/03/18/%E6%95%B0%E6%8D%AE%E5%BA%93%E8%A1%A8%E7%9A%84%E7%BA%A6%E6%9D%9F/" rel="prev" title="数据库中的约束">
-                数据库中的约束 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -587,7 +564,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#DQL（查询表中的数据）"><span class="nav-number">1.</span> <span class="nav-text">DQL（查询表中的数据）</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Vi编辑器"><span class="nav-number">1.</span> <span class="nav-text">Vi编辑器</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#命令行模式"><span class="nav-number">1.1.</span> <span class="nav-text">命令行模式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#文本输入模式"><span class="nav-number">1.2.</span> <span class="nav-text">文本输入模式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#末行模式"><span class="nav-number">1.3.</span> <span class="nav-text">末行模式</span></a></li></ol></li></ol></div>
             
 
           </div>

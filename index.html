@@ -257,6 +257,372 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/04/19/Vi%E7%BC%96%E8%BE%91%E6%96%87%E6%9C%AC/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="weikang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="半价ing">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/04/19/Vi%E7%BC%96%E8%BE%91%E6%96%87%E6%9C%AC/" itemprop="url">Linux常用命令</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-04-19T18:39:12+08:00">
+                2020-04-19
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%BC%96%E7%A8%8B/" itemprop="url" rel="index">
+                    <span itemprop="name">编程</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  759
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  2
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="Vi编辑器"><a href="#Vi编辑器" class="headerlink" title="Vi编辑器"></a>Vi编辑器</h2><p>Vi编辑器总共有三种模式：命令行模式，文本输入模式，末行模式<br>进入vi的命令<br><code>vi filename</code> 打开或新建文件，并将光标置于第一行首<br><code>vi +n filename</code> 打开文件，并将光标置于第n行首<br><code>vi + filename</code> 打开文件，并将光标置于最后一行首<br><code>vi +/pattern filename</code>打开文件，并将光标置于第一个与pattern匹配的串处<br><code>vi -r filename</code> 在上次正用vi编辑时发生系统崩溃，恢复filename<br><code>vi filename….filename</code> 打开多个文件，依次进行编辑</p>
+<h3 id="命令行模式"><a href="#命令行模式" class="headerlink" title="命令行模式"></a>命令行模式</h3><p>屏幕翻滚类命令<br><code>Ctrl+u</code>向文件首翻半屏<br><code>Ctrl+d</code>向文件尾翻半屏<br><code>Ctrl+f</code>向文件尾翻一屏<br><code>Ctrl＋b</code>向文件首翻一屏<br><code>nz</code>将第n行滚至屏幕顶部，不指定n时将当前行滚至屏幕顶部<br>Vi编辑器的默认模式，可以在此模式下键入命令来进入其他的模式，其他模式下按<code>ESC</code>键就可以回到命令行模式<br>命令行插入命令：<br><code>i</code> 在光标前插入<br><code>I</code> 在当前行首<br><code>a</code> 在光标后<br><code>A</code> 在当前行尾<br><code>o</code> 在当前行下新开一行<br><code>O</code> 在当前行上新开一行<br><code>r</code> 替换当前字符<br><code>R</code> 替换当前及以后字符，直到按ESC为止<br>删除命令<br><code>ndw或ndW</code>删除光标处开始及其后的n-1个字<br><code>do</code>删至行首<br><code>d$</code>删至行尾<br><code>ndd</code>删除当前行及其后n-1行<br><code>x或X</code>删除一个字符，x删除光标后的，而X删除光标前的<br><code>Ctrl+u</code>删除输入方式下所输入的文本<br>搜索及替换命令<br><code>/pattern</code>从光标开始处向文件尾搜索pattern<br><code>?pattern</code>从光标开始处向文件首搜索pattern<br><code>n</code>在同一方向重复上一次搜索命令<br><code>N</code>在反方向上重复上一次搜索命令<br><code>：s/p1/p2/g</code>将当前行中所有p1均用p2替代<br><code>：n1,n2s/p1/p2/g</code>将第n1至n2行中所有p1均用p2替代<br><code>：g/p1/s//p2/g</code>将文件中所有p1均用p2替换<br>选项设置<br><code>all</code>列出所有选项设置情况<br><code>term</code>设置终端类型<br><code>ignorance</code>在搜索中忽略大小写<br><code>list</code>：显示制表位(Ctrl+I)和行尾标志（$)<br><code>number</code>显示行号<br><code>report</code>显示由面向行的命令修改过的数目<br><code>terse</code>显示简短的警告信息<br><code>warn</code>在转到别的文件时若没保存当前文件则显示NO write信息<br><code>nomagic</code>允许在搜索模式中，使用前面不带“\”的特殊字符<br><code>nowrapscan</code>禁止vi在搜索到达文件两端时，又从另一端开始<br><code>mesg</code>允许vi显示其他用户用write写到自己终端上的信息</p>
+<h3 id="文本输入模式"><a href="#文本输入模式" class="headerlink" title="文本输入模式"></a>文本输入模式</h3><p>此模式下可以编辑本文内容</p>
+<h3 id="末行模式"><a href="#末行模式" class="headerlink" title="末行模式"></a>末行模式</h3><p>在命令行模式下按<code>：</code>进入末行模式，输入命令时会在最后一行显示，输入完命令后会自动进入命令行模式<br><code>：w</code> 保存当前文件<br><code>:q</code> 退出vi<br><code>：q!</code> 退出vi但不保存文件<br><code>：x</code> 保存当前文件并退出</p>
+
+          
+        
+      
+    </div>
+<!-- 文章结束表示语-->
+     <div>
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+      
+        <div class="post-eof"></div>
+      
+
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/04/19/Linux%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="weikang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="半价ing">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/04/19/Linux%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/" itemprop="url">Linux常用命令</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-04-19T17:45:24+08:00">
+                2020-04-19
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%BC%96%E7%A8%8B/" itemprop="url" rel="index">
+                    <span itemprop="name">编程</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  117
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  1
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <ol>
+<li>进入文件命令：<code>cd 文件名 //可以进入想要进入的文件</code> <code>cd.</code>代表的是当前的位置，<code>cd..</code>代表是的上一级目录<ol start="2">
+<li>创建文件夹命令：<code>mkdir 文件夹名</code></li>
+<li>删除文件夹命令：<code>rm -r 文件夹名</code>,删除目录，如果要强制删除的话就是<code>rm -rf 文件夹名</code></li>
+<li>创建文件命令：<code>touch 文件名</code></li>
+<li>删除文件命令：<code>rm 文件名</code></li>
+<li>查看文件命令：<code>vi 文件名</code></li>
+</ol>
+</li>
+</ol>
+
+          
+        
+      
+    </div>
+<!-- 文章结束表示语-->
+     <div>
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+      
+        <div class="post-eof"></div>
+      
+
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/18/%E6%95%B0%E6%8D%AE%E5%BA%93%E8%A1%A8%E7%9A%84%E7%BA%A6%E6%9D%9F/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1021,7 +1387,7 @@
               
                 <a href="/archives/%7C%7C%20archive">
               
-                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-count">6</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -1043,7 +1409,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-count">2</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -1101,7 +1467,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">1.6k</span>
+    <span title="Site words total count">2.5k</span>
   
 </div>
 
