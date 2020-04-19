@@ -257,6 +257,165 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/04/19/JDBC/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="weikang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="半价ing">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/04/19/JDBC/" itemprop="url">JDBC</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-04-19T22:48:20+08:00">
+                2020-04-19
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  313
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  1
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <hr>
+<p>title: JDBC的简单用法<br>categories:<br>      - 编程<br>tags:<br>      - JDBC<br>—## JDBC<br>概念：Java Database Connectivity Java 数据库连接，Java语言操作数据库，<br>本质：官方（sun公司）定义的一套操作所有关系型数据库的规则（接口），各个数据库厂商去实现这套接口，提供数据库驱动jar包<br>，我们可以使用这套接口(JDBC)编程，真正执行的代码是驱动jar包中的实现类<br>&lt;! –more–&gt;<br>主要实现步骤：<br>1、导入驱动jar包（mysql-connector-java-5.1.37.bin.jar）<br>2、注册驱动<br>3、获取数据库连接对象 Connection<br>4、定义sql<br>5、获取执行sql语句的对象 Statement<br>6、执行sql，接受返回结果<br>7、处理结果<br>8、释放资源<br>实现代码：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Class.forname(&quot;com.mysql.jdbc.Driver&quot;); &#x2F;&#x2F;注册驱动</span><br><span class="line">Connection conn &#x3D; DriverManager.getConnection(&quot;jdbc:mysql:&#x2F;&#x2F;localhost:3306&#x2F;数据库名称&quot;,&quot;用户名&quot;,&quot;密码&quot;); &#x2F;&#x2F;获取数据库的连接</span><br><span class="line">String sql &#x3D; “sql语句&quot;; &#x2F;&#x2F;定义sql语句</span><br><span class="line">Statement stmt &#x3D; conn.creatStatement();&#x2F;&#x2F;获取执行sql的对象</span><br><span class="line">int conn &#x3D; stmt.executeUpdate(sql); &#x2F;&#x2F;执行sql语句，这里stmt后面的是更新语句相关的函数，还有其他的函数</span><br><span class="line">stmt.close();</span><br><span class="line">conn.close(); &#x2F;&#x2F;释放资源</span><br></pre></td></tr></table></figure>
+
+
+
+          
+        
+      
+    </div>
+<!-- 文章结束表示语-->
+     <div>
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+      
+        <div class="post-eof"></div>
+      
+
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/04/19/Vi%E7%BC%96%E8%BE%91%E6%96%87%E6%9C%AC/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -276,7 +435,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2020/04/19/Vi%E7%BC%96%E8%BE%91%E6%96%87%E6%9C%AC/" itemprop="url">Linux常用命令</a></h1>
+                <a class="post-title-link" href="/2020/04/19/Vi%E7%BC%96%E8%BE%91%E6%96%87%E6%9C%AC/" itemprop="url">Vi编辑文本</a></h1>
         
 
         <div class="post-meta">
@@ -380,7 +539,7 @@
 
       
         
-          <h2 id="Vi编辑器"><a href="#Vi编辑器" class="headerlink" title="Vi编辑器"></a>Vi编辑器</h2><p>Vi编辑器总共有三种模式：命令行模式，文本输入模式，末行模式</p>
+          <h2 id="Vi编辑器"><a href="#Vi编辑器" class="headerlink" title="Vi编辑器"></a>Vi编辑器</h2><p>Vi编辑器总共有三种模式：命令行模式，文本输入模式，末行模式<br>进入vi的命令<br><code>vi filename</code> 打开或新建文件，并将光标置于第一行首<br><code>vi +n filename</code> 打开文件，并将光标置于第n行首<br><code>vi + filename</code> 打开文件，并将光标置于最后一行首<br><code>vi +/pattern filename</code>打开文件，并将光标置于第一个与pattern匹配的串处<br><code>vi -r filename</code> 在上次正用vi编辑时发生系统崩溃，恢复filename<br><code>vi filename….filename</code> 打开多个文件，依次进行编辑</p>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2020/04/19/Vi%E7%BC%96%E8%BE%91%E6%96%87%E6%9C%AC/#more" rel="contents">
@@ -1386,7 +1545,7 @@
               
                 <a href="/archives/%7C%7C%20archive">
               
-                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-count">7</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -1466,7 +1625,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">2.5k</span>
+    <span title="Site words total count">2.8k</span>
   
 </div>
 
