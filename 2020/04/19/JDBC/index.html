@@ -86,7 +86,7 @@
 <meta property="og:site_name" content="半价ing">
 <meta property="og:description" content="JDBC概念：Java Database Connectivity Java 数据库连接，Java语言操作数据库，本质：官方（sun公司）定义的一套操作所有关系型数据库的规则（接口），各个数据库厂商去实现这套接口，提供数据库驱动jar包，我们可以使用这套接口(JDBC)编程，真正执行的代码是驱动jar包中的实现类">
 <meta property="article:published_time" content="2020-04-19T14:48:20.930Z">
-<meta property="article:modified_time" content="2020-04-19T15:00:19.795Z">
+<meta property="article:modified_time" content="2020-04-21T06:51:58.076Z">
 <meta property="article:author" content="weikang">
 <meta property="article:tag" content="JDBC">
 <meta name="twitter:card" content="summary">
@@ -378,7 +378,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  299
+                  383
                 </span>
               
 
@@ -418,7 +418,7 @@
         <h2 id="JDBC"><a href="#JDBC" class="headerlink" title="JDBC"></a>JDBC</h2><p>概念：Java Database Connectivity Java 数据库连接，Java语言操作数据库，<br>本质：官方（sun公司）定义的一套操作所有关系型数据库的规则（接口），各个数据库厂商去实现这套接口，提供数据库驱动jar包<br>，我们可以使用这套接口(JDBC)编程，真正执行的代码是驱动jar包中的实现类</p>
 <a id="more"></a>
 <p>主要实现步骤：<br>1、导入驱动jar包（mysql-connector-java-5.1.37.bin.jar）<br>2、注册驱动<br>3、获取数据库连接对象 Connection<br>4、定义sql<br>5、获取执行sql语句的对象 Statement<br>6、执行sql，接受返回结果<br>7、处理结果<br>8、释放资源<br>实现代码：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Class.forname(&quot;com.mysql.jdbc.Driver&quot;); &#x2F;&#x2F;注册驱动</span><br><span class="line">Connection conn &#x3D; DriverManager.getConnection(&quot;jdbc:mysql:&#x2F;&#x2F;localhost:3306&#x2F;数据库名称&quot;,&quot;用户名&quot;,&quot;密码&quot;); &#x2F;&#x2F;获取数据库的连接</span><br><span class="line">String sql &#x3D; “sql语句&quot;; &#x2F;&#x2F;定义sql语句</span><br><span class="line">Statement stmt &#x3D; conn.creatStatement();&#x2F;&#x2F;获取执行sql的对象</span><br><span class="line">int conn &#x3D; stmt.executeUpdate(sql); &#x2F;&#x2F;执行sql语句，这里stmt后面的是更新语句相关的函数，还有其他的函数</span><br><span class="line">stmt.close();</span><br><span class="line">conn.close(); &#x2F;&#x2F;释放资源</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line">package jdbc_1;</span><br><span class="line"></span><br><span class="line">import java.sql.Connection;</span><br><span class="line">import java.sql.DriverManager;</span><br><span class="line">import java.sql.SQLException;</span><br><span class="line">import java.sql.Statement;</span><br><span class="line"></span><br><span class="line">public class demojdbc &#123;</span><br><span class="line"></span><br><span class="line">	public static void main(String[] args) &#123;</span><br><span class="line">		&#x2F;&#x2F; TODO Auto-generated method stub		</span><br><span class="line">		try &#123;</span><br><span class="line">			&#x2F;&#x2F;注册驱动</span><br><span class="line">			Class.forName(&quot;com.mysql.jdbc.Driver&quot;); </span><br><span class="line">			&#x2F;&#x2F;连接数据库</span><br><span class="line">			Connection conn &#x3D; DriverManager.getConnection(&quot;jdbc:mysql:&#x2F;&#x2F;localhost:3306&#x2F;数据库名称&quot;, &quot;用户名称&quot;, &quot;密码&quot;);</span><br><span class="line">			&#x2F;&#x2F;定义sql</span><br><span class="line">			String sql &#x3D; &quot;update stu set age &#x3D; 20 where id&#x3D;1&quot;;</span><br><span class="line">			&#x2F;&#x2F;获取执行sql语句的对象</span><br><span class="line">			Statement stmt &#x3D; conn.createStatement();</span><br><span class="line">			&#x2F;&#x2F;执行sql语句</span><br><span class="line">			int count &#x3D; stmt.executeUpdate(sql);</span><br><span class="line">			&#x2F;&#x2F;输出count，count返回的数值代表的是返回的影响数据库的行数</span><br><span class="line">			System.out.println(count);</span><br><span class="line">			&#x2F;&#x2F;释放资源</span><br><span class="line">			stmt.close();</span><br><span class="line">			conn.close();</span><br><span class="line">		&#125; catch (SQLException e) &#123;</span><br><span class="line">			&#x2F;&#x2F; TODO Auto-generated catch block</span><br><span class="line">			e.printStackTrace();</span><br><span class="line">		&#125;catch (ClassNotFoundException e1) &#123;</span><br><span class="line">			&#x2F;&#x2F; TODO Auto-generated catch block</span><br><span class="line">			e1.printStackTrace();</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">		</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 
 
@@ -678,7 +678,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">2.9k</span>
+    <span title="Site words total count">3k</span>
   
 </div>
 
