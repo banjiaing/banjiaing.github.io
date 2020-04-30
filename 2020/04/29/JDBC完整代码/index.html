@@ -79,14 +79,14 @@
 
 
 
-<meta name="description" content="SQL通用用法：Mysql在cmd中的登录命令：mysql -u用户名 -p退出命令：exit">
+<meta name="description" content="在项目中创建jdbc.properties文件，用来放置连接数据库时需要加载的信息  1234url&#x3D;jdbc:mysql:&#x2F;&#x2F;localhost:3306&#x2F;数据库名称user&#x3D;用户名password&#x3D;密码driver&#x3D;com.mysql.jdbc.Driver">
 <meta property="og:type" content="article">
-<meta property="og:title" content="MySQL基础">
-<meta property="og:url" content="http://yoursite.com/2020/03/18/Mysql%E5%9F%BA%E7%A1%80/index.html">
+<meta property="og:title" content="JDBC完整代码">
+<meta property="og:url" content="http://yoursite.com/2020/04/29/JDBC%E5%AE%8C%E6%95%B4%E4%BB%A3%E7%A0%81/index.html">
 <meta property="og:site_name" content="半价ing">
-<meta property="og:description" content="SQL通用用法：Mysql在cmd中的登录命令：mysql -u用户名 -p退出命令：exit">
-<meta property="article:published_time" content="2020-03-18T09:50:45.281Z">
-<meta property="article:modified_time" content="2020-03-18T12:23:32.974Z">
+<meta property="og:description" content="在项目中创建jdbc.properties文件，用来放置连接数据库时需要加载的信息  1234url&#x3D;jdbc:mysql:&#x2F;&#x2F;localhost:3306&#x2F;数据库名称user&#x3D;用户名password&#x3D;密码driver&#x3D;com.mysql.jdbc.Driver">
+<meta property="article:published_time" content="2020-04-29T15:45:55.870Z">
+<meta property="article:modified_time" content="2020-04-30T00:52:51.800Z">
 <meta property="article:author" content="weikang">
 <meta property="article:tag" content="MySQL">
 <meta name="twitter:card" content="summary">
@@ -119,13 +119,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2020/03/18/Mysql基础/"/>
+  <link rel="canonical" href="http://yoursite.com/2020/04/29/JDBC完整代码/"/>
 
 
 
 
 
-  <title>MySQL基础 | 半价ing</title>
+  <title>JDBC完整代码 | 半价ing</title>
   
 
 
@@ -295,7 +295,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/18/Mysql%E5%9F%BA%E7%A1%80/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/04/29/JDBC%E5%AE%8C%E6%95%B4%E4%BB%A3%E7%A0%81/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="weikang">
@@ -312,7 +312,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">MySQL基础</h1>
+          <h1 class="post-title" itemprop="name headline">JDBC完整代码</h1>
         
 
         <div class="post-meta">
@@ -324,8 +324,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-03-18T17:50:45+08:00">
-                2020-03-18
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-04-29T23:45:55+08:00">
+                2020-04-29
               </time>
             
 
@@ -378,7 +378,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  244
+                  816
                 </span>
               
 
@@ -394,7 +394,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  1
+                  4
                 </span>
               
             </div>
@@ -415,10 +415,25 @@
       
 
       
-        <h2 id="SQL通用用法："><a href="#SQL通用用法：" class="headerlink" title="SQL通用用法："></a>SQL通用用法：</h2><p>Mysql在cmd中的登录命令：<br>mysql -u用户名 -p<br>退出命令：exit</p>
+        <ol>
+<li>在项目中创建jdbc.properties文件，用来放置连接数据库时需要加载的信息</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">url&#x3D;jdbc:mysql:&#x2F;&#x2F;localhost:3306&#x2F;数据库名称</span><br><span class="line">user&#x3D;用户名</span><br><span class="line">password&#x3D;密码</span><br><span class="line">driver&#x3D;com.mysql.jdbc.Driver</span><br></pre></td></tr></table></figure>
 <a id="more"></a>
-<p>1、SQL语句可以单行或多行进行书写，以分号结尾<br>2、可使用空格和缩进增强语句的可读性<br>3、MySQL数据库的SQL语句不区分大小写，关键字建议使用大写<br>4、MySQL有三种注释<br>单行注释：<br>–   注释内容<br># 注释内容（符号后面要带有空格）<br>多行注释：/*注释内容*/</p>
-<h2 id="SQL分类"><a href="#SQL分类" class="headerlink" title="SQL分类"></a>SQL分类</h2><p>1、DDL（数据定义语言）：用来定义数据库对象：数据库，表，列等。<br>关键字：create，drop，alter等<br>2、DML（数据操作语言）：用来对数据库中的表的数据进行增删改<br>关键字：insert，delete，update等<br>3、DQL（数据查询语言）：用来查询数据库中表的记录（数据）<br>关键字：select，where等<br>4、DCL（数据控制语言）：用来定义数据库的访问权限和安全级别，及创建用户<br>关键字：GRANT，REVOKE</p>
+<ol start="2">
+<li>新创建一个包，命名为util，在包中创建JDBCUtils.java文件</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br></pre></td><td class="code"><pre><span class="line">package util;</span><br><span class="line">import java.io.FileNotFoundException;</span><br><span class="line">import java.io.FileReader;</span><br><span class="line">import java.io.IOException;</span><br><span class="line">import java.net.URL;</span><br><span class="line">import java.sql.Connection;</span><br><span class="line">import java.sql.DriverManager;</span><br><span class="line">import java.sql.PreparedStatement;</span><br><span class="line">import java.sql.ResultSet;</span><br><span class="line">import java.sql.SQLException;</span><br><span class="line">import java.sql.Statement;</span><br><span class="line">import java.util.Properties;</span><br><span class="line">&#x2F;**</span><br><span class="line"> * @author 张伟康</span><br><span class="line"> *</span><br><span class="line"> *&#x2F;</span><br><span class="line">public class JDBCUtils &#123;</span><br><span class="line">	private static String url;</span><br><span class="line">	private static String user;</span><br><span class="line">	private static String password;</span><br><span class="line">	private static String driver;</span><br><span class="line">	static &#123;</span><br><span class="line">		&#x2F;&#x2F; 读取资源文件，获取值</span><br><span class="line">		&#x2F;&#x2F; 1.创建Properties对象</span><br><span class="line">		Properties pro &#x3D; new Properties();</span><br><span class="line">		&#x2F;&#x2F; 2.加载文件</span><br><span class="line">		&#x2F;&#x2F; 获取src路径下的文件的方式-----》ClassLoader类加载器</span><br><span class="line">		ClassLoader classloader &#x3D; JDBCUtils.class.getClassLoader();</span><br><span class="line">		URL res &#x3D; classloader.getResource(&quot;jdbc.properties&quot;);</span><br><span class="line">		String path &#x3D; res.getPath();</span><br><span class="line">		&#x2F;&#x2F;System.out.println(path);</span><br><span class="line">		try &#123;</span><br><span class="line">			pro.load(new FileReader(path));</span><br><span class="line">			url &#x3D; pro.getProperty(&quot;url&quot;);</span><br><span class="line">			user &#x3D; pro.getProperty(&quot;user&quot;);</span><br><span class="line">			password &#x3D; pro.getProperty(&quot;password&quot;);</span><br><span class="line">			driver &#x3D; pro.getProperty(&quot;driver&quot;);</span><br><span class="line">			&#x2F;&#x2F;System.out.println(&quot;url:&quot; + url + &quot;user:&quot; + user + &quot;password:&quot; + password);</span><br><span class="line">			Class.forName(driver);</span><br><span class="line">		&#125; catch (Exception e) &#123;</span><br><span class="line">			&#x2F;&#x2F; TODO Auto-generated catch block</span><br><span class="line">			e.printStackTrace();</span><br><span class="line">		&#125; </span><br><span class="line">	&#125;</span><br><span class="line">	&#x2F;**</span><br><span class="line">	 * 获取连接</span><br><span class="line">	 * </span><br><span class="line">	 * @return</span><br><span class="line">	 * @throws SQLException</span><br><span class="line">	 *&#x2F;</span><br><span class="line">	public static Connection getConnection() throws SQLException &#123;</span><br><span class="line">		return DriverManager.getConnection(url, user, password);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	&#x2F;**</span><br><span class="line">	 * 释放资源</span><br><span class="line">	 * </span><br><span class="line">	 * @param stmt</span><br><span class="line">	 * @param conn</span><br><span class="line">	 *&#x2F;</span><br><span class="line">	public static void close(PreparedStatement pstmt, Connection conn) &#123;</span><br><span class="line">		if (pstmt !&#x3D; null) &#123;</span><br><span class="line">			try &#123;</span><br><span class="line">				pstmt.close();</span><br><span class="line">			&#125; catch (SQLException e) &#123;</span><br><span class="line">				&#x2F;&#x2F; TODO Auto-generated catch block</span><br><span class="line">				e.printStackTrace();</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		if (conn !&#x3D; null) &#123;</span><br><span class="line">			try &#123;</span><br><span class="line">				conn.close();</span><br><span class="line">			&#125; catch (SQLException e) &#123;</span><br><span class="line">				&#x2F;&#x2F; TODO Auto-generated catch block</span><br><span class="line">				e.printStackTrace();</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	&#x2F;**</span><br><span class="line">	 * 释放资源</span><br><span class="line">	 * </span><br><span class="line">	 * @param re</span><br><span class="line">	 * @param stmt</span><br><span class="line">	 * @param conn</span><br><span class="line">	 *&#x2F;</span><br><span class="line">	public static void close(ResultSet re, PreparedStatement pstmt, Connection conn) &#123;</span><br><span class="line">		if (re !&#x3D; null) &#123;</span><br><span class="line">			try &#123;</span><br><span class="line">				re.close();</span><br><span class="line">			&#125; catch (SQLException e) &#123;</span><br><span class="line">				&#x2F;&#x2F; TODO Auto-generated catch block</span><br><span class="line">				e.printStackTrace();</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		if (pstmt !&#x3D; null) &#123;</span><br><span class="line">			try &#123;</span><br><span class="line">				pstmt.close();</span><br><span class="line">			&#125; catch (SQLException e) &#123;</span><br><span class="line">				&#x2F;&#x2F; TODO Auto-generated catch block</span><br><span class="line">				e.printStackTrace();</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		if (conn !&#x3D; null) &#123;</span><br><span class="line">			try &#123;</span><br><span class="line">				conn.close();</span><br><span class="line">			&#125; catch (SQLException e) &#123;</span><br><span class="line">				&#x2F;&#x2F; TODO Auto-generated catch block</span><br><span class="line">				e.printStackTrace();</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ol start="3">
+<li>创建student.java，用来封装数据</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">package jdbc_3;</span><br><span class="line">public class student &#123;</span><br><span class="line">	private int id;</span><br><span class="line">	private String name;</span><br><span class="line">	private int age;</span><br><span class="line">	public int getId() &#123;</span><br><span class="line">		return id;</span><br><span class="line">	&#125;</span><br><span class="line">	public void setId(int id) &#123;</span><br><span class="line">		this.id &#x3D; id;</span><br><span class="line">	&#125;</span><br><span class="line">	public String getName() &#123;</span><br><span class="line">		return name;</span><br><span class="line">	&#125;</span><br><span class="line">	public void setName(String name) &#123;</span><br><span class="line">		this.name &#x3D; name;</span><br><span class="line">	&#125;</span><br><span class="line">	public int getAge() &#123;</span><br><span class="line">		return age;</span><br><span class="line">	&#125;</span><br><span class="line">	public void setAge(int age) &#123;</span><br><span class="line">		this.age &#x3D; age;</span><br><span class="line">	&#125;</span><br><span class="line">	@Override</span><br><span class="line">	public String toString() &#123;</span><br><span class="line">		return &quot;student [id&#x3D;&quot; + id + &quot;, name&#x3D;&quot; + name + &quot;, age&#x3D;&quot; + age + &quot;, getId()&#x3D;&quot; + getId() + &quot;, getName()&#x3D;&quot;</span><br><span class="line">				+ getName() + &quot;, getAge()&#x3D;&quot; + getAge() + &quot;, getClass()&#x3D;&quot; + getClass() + &quot;, hashCode()&#x3D;&quot; + hashCode()</span><br><span class="line">				+ &quot;, toString()&#x3D;&quot; + super.toString() + &quot;]&quot;;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ol start="4">
+<li>创建jdbcQuery.java文件，来查询用户信息<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line">package jdbc_3;</span><br><span class="line"></span><br><span class="line">import java.sql.Connection;</span><br><span class="line">import java.sql.PreparedStatement;</span><br><span class="line">import java.sql.ResultSet;</span><br><span class="line">import java.sql.SQLException;</span><br><span class="line">import java.util.ArrayList;</span><br><span class="line"></span><br><span class="line">import util.JDBCUtils;</span><br><span class="line"></span><br><span class="line">public class jdbcQuery &#123;</span><br><span class="line"></span><br><span class="line">	public static void main(String[] args) &#123;</span><br><span class="line">		&#x2F;&#x2F; TODO Auto-generated method stub</span><br><span class="line">		student stu &#x3D; null;</span><br><span class="line">		Connection conn &#x3D; null;</span><br><span class="line">		PreparedStatement pstmt &#x3D; null;</span><br><span class="line">		ResultSet re &#x3D; null;</span><br><span class="line">		ArrayList&lt;student&gt; stu1 &#x3D; new ArrayList&lt;student&gt;();</span><br><span class="line">		try &#123;</span><br><span class="line">			conn &#x3D; JDBCUtils.getConnection();</span><br><span class="line">			String sql &#x3D; &quot;select * from student where id &#x3D; ? and age &#x3D; ?&quot;;</span><br><span class="line">			pstmt &#x3D; conn.prepareStatement(sql);</span><br><span class="line">			pstmt.setInt(1, 1);</span><br><span class="line">			pstmt.setInt(2, 25);</span><br><span class="line">			re &#x3D; pstmt.executeQuery();</span><br><span class="line">			while(re.next()) &#123;</span><br><span class="line">				int id &#x3D; re.getInt(1);</span><br><span class="line">				String name &#x3D; re.getString(2);</span><br><span class="line">				int age &#x3D; re.getInt(3);</span><br><span class="line">				stu &#x3D; new student();</span><br><span class="line">				stu.setId(id);</span><br><span class="line">				stu.setName(name);</span><br><span class="line">				stu.setAge(age);</span><br><span class="line">				stu1.add(stu);</span><br><span class="line">			&#125;</span><br><span class="line">			System.out.println(stu1.get(0).getName());</span><br><span class="line">		&#125; catch (SQLException e) &#123;</span><br><span class="line">			&#x2F;&#x2F; TODO Auto-generated catch block</span><br><span class="line">			e.printStackTrace();</span><br><span class="line">		&#125;finally &#123;</span><br><span class="line">			JDBCUtils.close(re, pstmt, conn); </span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+</li>
+</ol>
 
       
     </div>
@@ -488,14 +503,14 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2020/04/21/JDBC%E6%8E%A7%E5%88%B6%E4%BA%8B%E5%8A%A1/" rel="next" title="JDBC控制事务">
+                <i class="fa fa-chevron-left"></i> JDBC控制事务
+              </a>
+            
           </div>
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2020/03/18/DDL%E5%92%8CDML/" rel="prev" title="DDL和DML">
-                DDL和DML <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -547,17 +562,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <section class="site-overview-wrap sidebar-panel">
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -621,22 +627,6 @@
         </div>
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#SQL通用用法："><span class="nav-number">1.</span> <span class="nav-text">SQL通用用法：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SQL分类"><span class="nav-number">2.</span> <span class="nav-text">SQL分类</span></a></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
       
